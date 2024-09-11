@@ -1,0 +1,35 @@
+<mat-dialog-content class="flex flex-col">
+  <div class="flex flex-col space-y-2">
+    <span class="text-lg font-thin">Change value</span>
+    <mat-form-field class="filter-input">
+      <mat-label>Enter new value</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="updatedCellValue"
+        placeholder="{{
+          data.column.toString().charAt(0).toUpperCase() +
+            data.column.toString().slice(1) +
+            ': ' +
+            data.cellValue.toString()
+        }}"
+      />
+      @if (updatedCellValue) {
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="clearInputValue()">
+        <mat-icon>close</mat-icon>
+      </button>
+      }
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="flex space-x-6">
+  <button mat-button mat-dialog-close class="outline-none">Cancel</button>
+  <button
+    mat-button
+    mat-dialog-close
+    class="outline-none"
+    (click)="updateCellValue(updatedCellValue, this.data.position, this.data.column)"
+  >
+    Change
+  </button>
+</mat-dialog-actions>

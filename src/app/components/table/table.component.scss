@@ -1,0 +1,27 @@
+.mat-column-position {
+  width: 25%;
+}
+
+@media (max-width: 400px) {
+  .mat-column-position {
+    max-width: 40px;
+  }
+  .mat-column-name {
+    max-width: 60px;
+  }
+  .mat-column-weight {
+    max-width: 60px;
+  }
+  .mat-column-symbol {
+    max-width: 40px;
+  }
+}
+.mat-column-name {
+  width: 25%;
+}
+.mat-column-weight {
+  width: 25%;
+}
+.mat-column-symbol {
+  width: 25%;
+}

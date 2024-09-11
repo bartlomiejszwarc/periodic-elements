@@ -1,0 +1,10 @@
+$breakpoint-small: 640px;
+
+.filter-input {
+  width: 24rem;
+}
+@media (max-width: $breakpoint-small) {
+  .filter-input {
+    width: 100%;
+  }
+}

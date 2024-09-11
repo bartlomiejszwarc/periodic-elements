@@ -1,0 +1,27 @@
+<div class="border-2 border-neutral-500 rounded-lg px-2 shadow-lg shadow-black/40">
+  @if (loading) {
+  <app-table-skeleton />
+  } @if (elements.length > 0){
+  <table mat-table [dataSource]="elements">
+    @for (column of columns; track column){
+    <ng-container matColumnDef="{{ column }}">
+      <th mat-header-cell *matHeaderCellDef class="mat-primary text-xs sm:text-base">
+        {{ column.charAt(0).toUpperCase() + column.slice(1) }}
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        class="cursor-pointer bg-transparent hover:bg-white/5 transition-colors ease-in-out duration-150 text-xs sm:text-[0.9rem]"
+        (click)="openEditDialog(element[column], element.position, column)"
+      >
+        {{ element[column] }}
+      </td>
+    </ng-container>
+    }
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+  } @if (elements.length === 0 && !loading) {
+  <app-no-matches-found />
+  }
+</div>

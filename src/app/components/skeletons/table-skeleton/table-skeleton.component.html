@@ -1,0 +1,61 @@
+<table mat-table [dataSource]="array" class="mat-table">
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef class="text-xs sm:text-base">Position</th>
+    <td mat-cell *matCellDef="let element">
+      <ngx-skeleton-loader
+        animation="pulse"
+        appearance="line"
+        [theme]="{
+          'margin-bottom': '-4px',
+          maxWidth: '35px',
+          'background-color': '#004F4F',         
+        }"
+      />
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef class="text-xs sm:text-base">Name</th>
+    <td mat-cell *matCellDef="let element">
+      <ngx-skeleton-loader
+        animation="pulse"
+        appearance="line"
+        [theme]="{            
+            'margin-bottom': '-4px',
+            maxWidth: '150px',
+            'background-color': '#004F4F',         
+          }"
+      />
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef class="text-xs sm:text-base">Weight</th>
+    <td mat-cell *matCellDef="let element">
+      <ngx-skeleton-loader
+        animation="pulse"
+        appearance="line"
+        [theme]="{            
+            'margin-bottom': '-4px',
+            maxWidth: '100px',
+            'background-color': '#004F4F',           
+          }"
+      />
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef class="text-xs sm:text-base">Symbol</th>
+    <td mat-cell *matCellDef="let element">
+      <ngx-skeleton-loader
+        animation="pulse"
+        appearance="line"
+        [theme]="{
+          'margin-bottom': '-4px',
+          maxWidth: '45px',
+          'background-color': '#004F4F',
+          
+        }"
+      />
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns"></tr>
+</table>
